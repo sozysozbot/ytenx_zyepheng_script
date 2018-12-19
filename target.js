@@ -175,7 +175,8 @@ var list = [
 ["phij","phryi"],
 ["xjwij","qhyi"],
 ["drwij","dryi"],
-["tsrhjwij","thyi"],
+// instead of ["tsrhjwij","thyi"],
+["tsyhwij","thyi"], // is used in ytenx.org
 ["trij","tri"],
 ["phjij","phi"],
 ["tswij","cyi"],

@@ -25,35 +25,24 @@ function handle_exceptions(baxter) {
   };
 
   var exceptional = {
-    laewng: "l*roŋ",
     nyej: "ni*ei",
     dzyej: "di*ei",
-    leaj: "l*rei",
-    lweaj: "l*ruei",
     tsyhoj: "thi*əi",
-    lean: "l*ren",
     tsyhean: "thi*ren",
-    lwean: "l*ruen",
     gwean: "g*ruen",
     dzean: "dz*ren",
     dzren: "dzr*uen",
-    laew: "l*rau",
     geaX: "g*ré",
     trwojX: "tr*úi",
     tsyhojX: "thi*ə́i",
     yojX: "ji*ə́i",
     nyojX: "ni*ə́i",
-    laeX: "l*rá",
     taengX: "t*ráŋ",
-    laengX: "l*ráŋ",
     dzruwX: "dzr*ú",
     syamX: "shi*ám",
-    leamX: "l*rém",
     trhejH: "thr*èi",
     tshwaejH: "ch*ruài",
-    laewk: "l*rok",
     nyaet: "ni*rat",
-    leak: "l*rek",
     gweak: "g*ruek",
     trhek: "thr*ek",
     dzyop: "di*əp",
@@ -329,7 +318,7 @@ function conversion(baxter) {
     tone = "\u0300"; // grave
   }
 
-  if (!isPKQ(onset) && rime[0] == "r") {
+  if (!isPKQ(onset) && rime[0] == "r" && onset != "l") {
     rime = rime.slice(1);
   }
 
@@ -356,6 +345,6 @@ function conversion(baxter) {
   if (onset_is_soft) {
     return onset.slice(0, -1) + rime;
   } else {
-    return onset + rime;
+    return (onset + rime).replace(/lr/, "l*r");
   }
 }

@@ -1,12 +1,14 @@
-function isPKQ(a) {
-  return ["p", "ph", "b", "m", "k", "kh", "g", "ŋ", "q", "qh", "x"].includes(a);
-}
-
-function isP(a) {
-  return ["p", "ph", "b", "m"].includes(a);
-}
-
 function conversion(baxter) {
+  function isPKQ(a) {
+    return ["p", "ph", "b", "m", "k", "kh", "g", "ŋ", "q", "qh", "x"].includes(
+      a
+    );
+  }
+
+  function isP(a) {
+    return ["p", "ph", "b", "m"].includes(a);
+  }
+
   var iu = {
     "'jiw": "qiu/qriu",
     pjiw: "piu/priu",
@@ -72,9 +74,9 @@ function conversion(baxter) {
 
   // obtain onset
   var onset_arr = baxter.match(/^[^aeioujw+]+/);
-  if (onset_arr == null) {
+  /*if (onset_arr == null) {
     throw new Error("onset not found");
-  }
+  }*/
   var onset_baxter = onset_arr[0];
 
   var onset_conversion = {
@@ -117,18 +119,18 @@ function conversion(baxter) {
     l: "l"
   };
   var onset = onset_conversion[onset_baxter];
-  if (!onset) {
+  /*if (!onset) {
     throw new Error("invalid onset " + onset_baxter);
-  }
+  }*/
 
   var onset_is_soft = onset[onset.length - 1] == "ь";
 
   // obtain rime
   var rime_arr = baxter.match(/^[^aeioujw+]+([^XH]+)/);
   // "tsrhaewng".match(/^[^aeioujw+]+([^XH]+)/) => ["tsrhaewng", "aewng"]
-  if (rime_arr == null) {
+  /*if (rime_arr == null) {
     throw new Error("rime not found");
-  }
+  }*/
   var rime_baxter = (onset_is_soft ? "j" : "") + rime_arr[1];
 
   var rime_conversion = {
@@ -299,10 +301,10 @@ function conversion(baxter) {
     wot: "u`t"
   };
   var rime = rime_conversion[rime_baxter];
-  if (!rime) {
+  /*if (!rime) {
     console.log("failed with " + rime_baxter);
     return null;
-  }
+  }*/
 
   var tone = "";
   if (baxter[baxter.length - 1] == "X") {

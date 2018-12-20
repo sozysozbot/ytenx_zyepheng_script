@@ -134,6 +134,50 @@ function conversion(baxter) {
   var rime_baxter = (onset_is_soft ? "j" : "") + rime_arr[1];
 
   function rime_conversion(a) {
+    var others = {
+      aewk: "ro`k",
+      aewng: "ro`ŋ",
+      i: "iə`",
+      ik: "iə`k",
+      ing: "iə`ŋ",
+      ij: "ri`",
+      jaek: "rie`k",
+      jaeng: "rie`ŋ",
+      ji: "iə`", // for convenience
+      jik: "iə`k", // for convenience
+      jing: "iə`ŋ", // for convenience
+      jij: "i`",
+
+      jo: "io`",
+      joj: "ia`i",
+      jom: "yo`m",
+      jon: "ia`n",
+      jop: "yo`p",
+      jot: "ia`t",
+      ju: "yo`",
+      jun: "yu`n",
+      jut: "yu`t",
+      jwe: "rye`",
+      jwej: "ye`i",
+      jwek: "rye`k",
+      jwen: "rye`n",
+      jweng: "rye`ŋ",
+      jwet: "rye`t",
+      u: "o`",
+      wij: "ry`i",
+      wik: "ryə`k",
+      win: "ry`n",
+      wit: "ry`t",
+      woj: "u`i",
+      wok: "uə`k",
+      won: "u`n",
+      wong: "uə`ŋ",
+      wot: "u`t"
+    };
+    if (others[a]) {
+      return others[a];
+    }
+
     var obj = {
       "": "",
       j: "i",
@@ -147,6 +191,7 @@ function conversion(baxter) {
     };
 
     var medial = [
+      /* the order matters */
       ["ea", "re"],
       ["e", "e"],
       ["wea", "rue"],
@@ -167,88 +212,20 @@ function conversion(baxter) {
       ["juw", "yu"],
       ["jwi", "y"],
       ["jow", "yo"],
-      ["jw+", "yu"]
+      ["jw+", "yu"],
+      ["ae", "ra"],
+      ["a", "a"],
+      ["i", "ri"],
+      ["ji", "i"],
+      ["jae", "ia"],
+      ["ja", "ia"]
     ];
 
     for (var i = 0; i < medial.length; i++) {
       if (a.startsWith(medial[i][0])) {
-        return medial[i][1] + "`" +  obj[a.slice(medial[i][0].length)];
+        return medial[i][1] + "`" + obj[a.slice(medial[i][0].length)];
       }
     }
-
-    return {
-    a: "a`",
-    ae: "ra`",
-    aej: "ra`i",
-    aek: "ra`k",
-    aem: "ra`m",
-    aen: "ra`n",
-    aeng: "ra`ŋ",
-    aep: "ra`p",
-    aet: "ra`t",
-    aew: "ra`u",
-    aewk: "ro`k",
-    aewng: "ro`ŋ",
-    aj: "a`i",
-    ak: "a`k",
-    am: "a`m",
-    an: "a`n",
-    ang: "a`ŋ",
-    ap: "a`p",
-    at: "a`t",
-    aw: "a`u",
-    i: "iə`",
-    ij: "ri`",
-    ik: "iə`k",
-    im: "ri`m",
-    in: "ri`n",
-    ing: "iə`ŋ",
-    ip: "ri`p",
-    it: "ri`t",
-    iw: "ri`u", // for convenience
-    ja: "ia`",
-    jae: "ia`",
-    jaek: "rie`k",
-    jaem: "ia`m",
-    jaeng: "rie`ŋ",
-    jaep: "ia`p",
-    jak: "ia`k",
-    jang: "ia`ŋ",
-    ji: "iə`", // for convenience
-    jij: "i`",
-    jik: "iə`k", // for convenience
-    jim: "i`m",
-    jin: "i`n",
-    jing: "iə`ŋ", // for convenience
-    jip: "i`p",
-    jit: "i`t",
-    jiw: "i`u",
-    jo: "io`",
-    joj: "ia`i",
-    jom: "yo`m",
-    jon: "ia`n",
-    jop: "yo`p",
-    jot: "ia`t",
-    ju: "yo`",
-    jun: "yu`n",
-    jut: "yu`t",
-    jwe: "rye`",
-    jwej: "ye`i",
-    jwek: "rye`k",
-    jwen: "rye`n",
-    jweng: "rye`ŋ",
-    jwet: "rye`t",
-    u: "o`",
-    wij: "ry`i",
-    wik: "ryə`k",
-    win: "ry`n",
-    wit: "ry`t",
-    woj: "u`i",
-    wok: "uə`k",
-    won: "u`n",
-    wong: "uə`ŋ",
-    wot: "u`t"
-    }[a];
   }
   var rime = rime_conversion(rime_baxter);
   /*if (!rime) {

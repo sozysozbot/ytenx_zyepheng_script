@@ -147,32 +147,13 @@ function conversion(baxter) {
       jik: "iə`k", // for convenience
       jing: "iə`ŋ", // for convenience
       jij: "i`",
-
       jo: "io`",
-      joj: "ia`i",
       jom: "yo`m",
-      jon: "ia`n",
       jop: "yo`p",
-      jot: "ia`t",
       ju: "yo`",
-      jun: "yu`n",
-      jut: "yu`t",
-      jwe: "rye`",
-      jwej: "rye`i",
-      jwek: "rye`k",
-      jwen: "rye`n",
-      jweng: "rye`ŋ",
-      jwet: "rye`t",
-      u: "o`",
-      wij: "ry`i",
       wik: "ryə`k",
-      win: "ry`n",
-      wit: "ry`t",
-      woj: "u`i",
       wok: "uə`k",
-      won: "u`n",
       wong: "uə`ŋ",
-      wot: "u`t"
     };
     if (others[a]) {
       return others[a];
@@ -213,12 +194,20 @@ function conversion(baxter) {
       ["jwi", "y"],
       ["jow", "yo"],
       ["jw+", "yu"],
+
+      // from here, compression is made possible only with `others`
       ["ae", "ra"],
       ["a", "a"],
       ["i", "ri"],
       ["ji", "i"],
       ["jae", "ia"],
-      ["ja", "ia"]
+      ["ja", "ia"],
+      ["jwe", "rye"],
+      ["jo", "ia"],
+      ["ju", "yu"],
+      ["u", "o"],
+      ["wi", "ry"],
+      ["wo", "u"]
     ];
 
     for (var i = 0; i < medial.length; i++) {

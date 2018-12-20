@@ -9,7 +9,8 @@ function conversion(baxter) {
     return ["p", "ph", "b", "m"].includes(a);
   }
 
-  var iu = {
+  var exceptional = {
+    // iu
     "'jiw": "qiu/qriu",
     pjiw: "piu/priu",
     kjiw: "kiu/kriu",
@@ -23,18 +24,16 @@ function conversion(baxter) {
     "'jiwH": "qrìu",
     gjiwH: "grìu",
     mjiwH: "mrìu",
-    khjiwH: "khrìu"
-  };
+    khjiwH: "khrìu",
 
-  var multiple = {
+    // multiple candidates
     khjweX: "khyé/khryé",
     khjeX: "khié/khrié",
     hwojX: "xúi/xi*úi",
     tsyinX: "tín/trín",
-    kjunH: "krỳn/kyùn"
-  };
+    kjunH: "krỳn/kyùn",
 
-  var exceptional = {
+    // asterisks
     nyej: "ni*ei",
     dzyej: "di*ei",
     tsyhoj: "thi*əi",
@@ -57,16 +56,12 @@ function conversion(baxter) {
     trhek: "thr*ek",
     dzyop: "di*əp",
     tsyap: "ti*ap",
-    djijH: "dî"
+    djijH: "dî",
+
+    //note
+    sraeng: "広韻sraŋ/切韻srieŋ",
+    sraengH: "広韻sràŋ/切韻srièŋ"
   };
-
-  if (iu[baxter]) {
-    return iu[baxter];
-  }
-
-  if (multiple[baxter]) {
-    return multiple[baxter];
-  }
 
   if (exceptional[baxter]) {
     return exceptional[baxter];
@@ -153,7 +148,7 @@ function conversion(baxter) {
       ju: "yo`",
       wik: "ryə`k",
       wok: "uə`k",
-      wong: "uə`ŋ",
+      wong: "uə`ŋ"
     };
     if (others[a]) {
       return others[a];

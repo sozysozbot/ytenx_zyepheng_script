@@ -158,7 +158,7 @@ function conversion(baxter) {
       jun: "yu`n",
       jut: "yu`t",
       jwe: "rye`",
-      jwej: "ye`i",
+      jwej: "rye`i",
       jwek: "rye`k",
       jwen: "rye`n",
       jweng: "rye`ŋ",

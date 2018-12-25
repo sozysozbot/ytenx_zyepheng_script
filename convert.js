@@ -239,6 +239,8 @@ function conversion(baxter) {
     "ua`": "a`",
     "rie`n": "rye`n",
     "rie`t": "rye`t",
+    "ia`ŋ": "ya`ŋ",
+    "ia`k": "ya`k",
     "iə`k": "ryə`k",
     "iə`ŋ": "ryə`ŋ"
   };

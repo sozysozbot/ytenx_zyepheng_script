@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        Show Zyepheŋ in ytenx.org (2021/05/19 15:55 UTC)
+// @name        Show Zyepheŋ in ytenx.org (2021/05/19 16:43 UTC)
 // @namespace   http://sozysozbot.github.io
 // @description Show Zyepheŋ in ytenx.org
 // @include    *://ytenx.org/*

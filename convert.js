@@ -21,46 +21,46 @@ function conversion(baxter) {
     bjiw: "briu",
     "'jiwX": "qríu",
     gjiwX: "gríu",
-    "'jiwH": "qrìu",
-    gjiwH: "grìu",
-    mjiwH: "mrìu",
-    khjiwH: "khrìu",
+    "'jiwH": "qrîu",
+    gjiwH: "grîu",
+    mjiwH: "mrîu",
+    khjiwH: "khrîu",
 
     // multiple candidates
     khjweX: "khyé/khryé",
     khjeX: "khié/khrié",
-    hwojX: "xúi/xi*úi",
+    hwojX: "xúi/xьʼúi",
     tsyinX: "tín/trín",
-    kjunH: "krỳn/kyùn",
+    kjunH: "krŷn/kyûn",
 
     // asterisks
-    nyej: "ni*ei",
-    dzyej: "di*ei",
-    tsyhoj: "thi*əi",
-    tsyhean: "thi*ren",
-    gwean: "g*ruen",
-    dzean: "dz*ren",
-    dzren: "dzr*uen",
-    geaX: "g*ré",
-    trwojX: "tr*úi",
-    tsyhojX: "thi*ə́i",
-    yojX: "ji*ə́i",
-    nyojX: "ni*ə́i",
-    taengX: "t*ráŋ",
-    dzruwX: "dzr*ú",
-    syamX: "shi*ám",
-    trhejH: "thr*èi",
-    tshwaejH: "ch*ruài",
-    nyaet: "ni*rat",
-    gweak: "g*ruek",
-    trhek: "thr*ek",
-    dzyop: "di*əp",
-    tsyap: "ti*ap",
-    djijH: "dî",
+    nyej: "nьʼei",
+    dzyej: "dьʼei",
+    tsyhoj: "thьʼəi",
+    tsyhean: "thьʼren",
+    // gwean: "gʼruen",
+    dzean: "dzʼren",
+    dzren: "dzrʼuen",
+    // geaX: "gʼré",
+    trwojX: "trʼúi",
+    tsyhojX: "thьʼə́i",
+    yojX: "jьʼə́i",
+    nyojX: "nьʼə́i",
+    taengX: "tʼráŋ",
+    dzruwX: "dzrʼú",
+    syamX: "shьʼám",
+    trhejH: "thrʼêi",
+    tshwaejH: "chʼruâi",
+    nyaet: "nьʼrat",
+    // gweak: "gʼruek",
+    trhek: "thrʼek",
+    dzyop: "dьʼəp",
+    tsyap: "tьʼap",
+    djijH: "dʼî",
 
     //note
     sraeng: "広韻sraŋ/切韻srieŋ",
-    sraengH: "広韻sràŋ/切韻srièŋ"
+    sraengH: "広韻srâŋ/切韻sriêŋ"
   };
 
   if (exceptional[baxter]) {
@@ -221,7 +221,7 @@ function conversion(baxter) {
   if (baxter[baxter.length - 1] == "X") {
     tone = "\u0301"; // acute
   } else if (baxter[baxter.length - 1] == "H") {
-    tone = "\u0300"; // grave
+    tone = "\u0302"; // circumflex
   }
 
   if (!isPKQ(onset) && rime[0] == "r" && onset != "l") {
@@ -255,6 +255,6 @@ function conversion(baxter) {
   if (onset_is_soft) {
     return onset.slice(0, -1) + rime;
   } else {
-    return (onset + rime).replace(/lr/, "l*r");
+    return onset + rime;
   }
 }

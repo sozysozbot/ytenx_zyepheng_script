@@ -18,7 +18,7 @@ if (location.href.includes("://ytenx.org/zim?dzih=")) {
     if (dom.tagName == "P") {
       const original = dom.lastElementChild.innerHTML;
       const input = original.replace(/.*白一平: ([^;]+);.*/, "$1");
-      dom.lastElementChild.innerHTML = `${original.replace(/\)\s*/, ";")} Mag462: ${conversion(
+      dom.lastElementChild.innerHTML = `${original.replace(/\)\s*/, ";")} 隋拼: ${conversion(
         input
       )})`;
     }
